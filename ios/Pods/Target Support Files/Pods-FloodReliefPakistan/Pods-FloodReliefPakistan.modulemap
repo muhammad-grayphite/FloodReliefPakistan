@@ -1,0 +1,6 @@
+module Pods_FloodReliefPakistan {
+  umbrella header "Pods-FloodReliefPakistan-umbrella.h"
+
+  export *
+  module * { export * }
+}
