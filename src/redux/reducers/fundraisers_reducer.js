@@ -12,7 +12,6 @@ const slice = createSlice({
         },
 
         setFundraisers: (state, { payload: { list } }) => {
-            // console.log('list', list)
             state.fundraisers_list = list,
                 state.loading = false
         },
@@ -24,6 +23,4 @@ export const { getFundraisers, setFundraisers } = slice.actions;
 
 export default slice.reducer;
 
-// export const get_fundraisers_list = state => {
-//     return state.fundraisers_list;
-// };
+

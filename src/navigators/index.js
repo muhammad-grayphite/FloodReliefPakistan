@@ -5,6 +5,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Splash from '../view/splash';
 import Home from '../view/Home';
+import Detail from '../view/detail';
+import OrgWorkingArea from '../view/org_working_areas';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +27,10 @@ function HomeNavigator() {
             initialRouteName="Home"
             screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Detail" component={Detail} />
+            <Stack.Screen name="OrganizationList" component={OrgWorkingArea} />
+
+
         </Stack.Navigator>
     );
 }
