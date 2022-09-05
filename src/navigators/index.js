@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Splash from '../view/splash';
+import Home from '../view/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,19 @@ function SplashNavigator() {
     );
 }
 
+function HomeNavigator() {
+    return (
+        <Stack.Navigator
+            initialRouteName="Home"
+            screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
+    );
+}
+
+
+
+
 
 function AppNavigator() {
     return (
@@ -27,6 +41,7 @@ function AppNavigator() {
                 screenOptions={{ headerShown: false }}
             >
                 <Stack.Screen name="Splash" component={SplashNavigator} />
+                <Stack.Screen name="HomeScreen" component={HomeNavigator} />
             </Stack.Navigator>
         </NavigationContainer>
     );
