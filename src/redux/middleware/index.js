@@ -1,27 +1,9 @@
-import { call, takeEvery, put } from "redux-saga/effects";
-import Axios from "axios";
-import { fetchData } from "./store";
-import { sagaActions } from "./sagaActions";
+import { call, takeEvery, put, all } from "redux-saga/effects";
 
-let callAPI = async ({ url, method, data }) => {
-    return await Axios({
-        url,
-        method,
-        data
-    });
-};
+import { fundraisers_Saga } from "./fundraiser_saga";
 
-export function* fetchDataSaga() {
-    try {
-        let result = yield call(() =>
-            callAPI({ url: "https://5ce2c23be3ced20014d35e3d.mockapi.io/api/todos" })
-        );
-        yield put(fetchData(result.data));
-    } catch (e) {
-        yield put({ type: "TODO_FETCH_FAILED" });
-    }
-}
+
 
 export default function* rootSaga() {
-    yield takeEvery(sagaActions.FETCH_DATA_SAGA, fetchDataSaga);
+    yield all([...fundraisers_Saga]);
 }

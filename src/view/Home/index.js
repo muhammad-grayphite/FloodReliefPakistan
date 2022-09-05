@@ -3,25 +3,30 @@ import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import AppHeader from "../../components/AppHeader";
 import { fundraisers_sheet_link, options } from "../../networkCall/endPoints";
 import { fetchData } from "../../networkCall";
+import { useSelector, useDispatch } from "react-redux";
 
 
 import styles from "./styles";
+import { getFundraisers } from "../../redux/reducers/fundraisers_reducer";
 
 const Home = ({ navigation }) => {
+    const dispatch = useDispatch()
+    const fundraisers = useSelector((state) => ({ ...state.fundraisers }))
+    const loading = fundraisers.loading
+    const fundraisers_list = fundraisers.fundraisers_list?.values
+    // console.log('fundraisers', fundraisers_list)
 
     useEffect(() => {
-        loadData()
+        // loadData()
+        dispatch(getFundraisers())
     }, [])
 
     const [state, updateState] = useReducer(
         (state, newState) => ({ ...state, ...newState }),
         {
-            fundraisers_list: [],
-            loading: false,
         }
     )
 
-    const { fundraisers_list, loading } = state
 
 
     async function loadData() {
@@ -32,7 +37,7 @@ const Home = ({ navigation }) => {
     }
 
     const redner_fundraisers_list = (item, index) => {
-        console.log('item is', item)
+        // console.log('item is', item)
     }
 
 

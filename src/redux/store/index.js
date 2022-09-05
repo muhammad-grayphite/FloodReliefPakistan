@@ -1,7 +1,5 @@
-import {
-    configureStore,
-    getDefaultMiddleware
-} from "@reduxjs/toolkit";
+import React from 'react'
+import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import reducers from "../reducers";
 
 import createSagaMiddleware from "redux-saga";

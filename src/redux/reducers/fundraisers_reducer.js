@@ -1,20 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const slice = createSlice({
-    name: 'fundraisers_list',
-    initialState: { fundraisers_list: [] },
+    name: 'fundraisers',
+    initialState: {
+        fundraisers_list: [],
+        loading: false,
+    },
     reducers: {
-        set_fundraisers_list: (state, { payload: { list } }) => {
-            state.fundraisers_list = list
+        getFundraisers: (state, actions) => {
+            state.loading = true
+        },
+
+        setFundraisers: (state, { payload: { list } }) => {
+            // console.log('list', list)
+            state.fundraisers_list = list,
+                state.loading = false
         },
 
     },
 });
 
-export const { set_fundraisers_list } = slice.actions;
+export const { getFundraisers, setFundraisers } = slice.actions;
 
 export default slice.reducer;
 
-export const get_fundraisers_list = state => {
-    return state.fundraisers_list;
-};
+// export const get_fundraisers_list = state => {
+//     return state.fundraisers_list;
+// };
