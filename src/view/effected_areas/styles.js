@@ -5,7 +5,7 @@ import { black, offwhite } from "../../constants/colors";
 
 const styles = StyleSheet.create({
     wraper: {
-        flex: 1,
+        flex: 0.94,
 
     },
     list_style: {
@@ -28,10 +28,11 @@ const styles = StyleSheet.create({
         backgroundColor: black,
         marginLeft: 20,
         alignSelf: 'flex-start',
-        marginTop: 2,
+        marginTop: 5,
     },
     flatList: {
-        height: hp(35)
+        // height: hp(40)
+        flex: 0.5
     },
     heading_color: {
         paddingHorizontal: 20,

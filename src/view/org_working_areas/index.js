@@ -3,6 +3,7 @@ import { View, Text, FlatList, Pressable } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import AppHeader from "../../components/AppHeader";
 import Heading from "../../components/Heading";
+import { black } from "../../constants/colors";
 import { getFundraisers } from "../../redux/reducers/fundraisers_reducer";
 
 
@@ -12,7 +13,6 @@ const OrgWorkingArea = ({ navigation, route }) => {
 
     let area = route?.params?.area.split(' ').join('')
 
-    const regex = new RegExp('/' + area + '/' + 'i')
     // str.search(new RegExp(search_str, "i"));
 
 
@@ -25,9 +25,6 @@ const OrgWorkingArea = ({ navigation, route }) => {
 
     let filterd = fundraisers_list.filter((item) => {
         // if (item[1].includes(area)) {
-
-        console.log('zaher', item[1].search(new RegExp(area, "i")))
-
         if (item[1].search(new RegExp(area, "i")) >= 0) {
             return item
         }
@@ -57,14 +54,19 @@ const OrgWorkingArea = ({ navigation, route }) => {
             <View style={styles.heading_color}>
                 <Heading heading={'List of organizations working'} />
             </View>
-            <FlatList
-                data={filterd}
-                renderItem={render_org_list}
-                showsVerticalScrollIndicator={false}
-                keyExtractor={item => 'a' + Math.random()}
-                initialNumToRender={20}
-                maxToRenderPerBatch={20}
-            />
+            {filterd?.length > 0 ?
+                <FlatList
+                    data={filterd}
+                    renderItem={render_org_list}
+                    showsVerticalScrollIndicator={false}
+                    keyExtractor={item => 'a' + Math.random()}
+                    initialNumToRender={20}
+                    maxToRenderPerBatch={20}
+                /> :
+                <View style={styles.content_in_center}>
+                    <Text style={{ color: black, fontSize: 16, fontWeight: 'normal' }}>No Result Found</Text>
+                </View>
+            }
 
         </View>
     )

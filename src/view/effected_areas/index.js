@@ -1,6 +1,7 @@
 import React, { useEffect, useReducer } from "react";
 import { View, Text, FlatList, ActivityIndicator, Pressable } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
+import Footer from "../../components/AppFooter";
 
 import AppHeader from "../../components/AppHeader";
 import Heading from "../../components/Heading";
@@ -87,6 +88,7 @@ function EffectedAreas({ navigation, route }) {
                     maxToRenderPerBatch={20}
                 />
             </View>
+
         </View>
     )
 }

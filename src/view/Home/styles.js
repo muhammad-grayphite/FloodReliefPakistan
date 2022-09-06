@@ -6,7 +6,7 @@ import { black, offwhite } from "../../constants/colors";
 
 const styles = StyleSheet.create({
     wraper: {
-        flex: 1,
+        flex: 0.94,
     },
     content_in_center: {
         flex: 1,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         backgroundColor: offwhite,
     },
     flatList: {
-        height: hp(30)
+        height: hp(35)
     },
     list_text: {
         color: black,

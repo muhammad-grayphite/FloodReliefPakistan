@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { black, offwhite } from "../../constants/colors";
 const styles = StyleSheet.create({
     wraper: {
-        flex: 1
+        flex: 0.94
     },
     list_style: {
         // paddingHorizontal: 15,
@@ -31,6 +31,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 10,
         backgroundColor: offwhite,
+    },
+    content_in_center: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 })
 export default styles

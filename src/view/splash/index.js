@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
-import { View, Text } from 'react-native'
-
-import AppHeader from '../../components/AppHeader'
+import { View, Text, Image } from 'react-native'
+import { splash_logo } from '../../constants/images'
 import styles from './styles'
 
 const Splash = ({ navigation }) => {
@@ -9,7 +8,7 @@ const Splash = ({ navigation }) => {
     useEffect(() => {
         setTimeout(() => {
             navigation.navigate('HomeScreen')
-        }, 2000)
+        }, 5000)
     }, [])
 
 
@@ -17,7 +16,11 @@ const Splash = ({ navigation }) => {
     return (
         <View style={{ flex: 1 }}>
             <View style={styles.wraper}>
-                <Text>Splash</Text>
+                <Image
+                    source={splash_logo}
+                    resizeMode={'contain'}
+                    style={{ width: '100%', height: '100%' }}
+                />
             </View>
         </View>
     )
