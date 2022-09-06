@@ -10,7 +10,11 @@ import styles from "./styles";
 
 const OrgWorkingArea = ({ navigation, route }) => {
 
-    let area = route?.params?.area
+    let area = route?.params?.area.split(' ').join('')
+
+    const regex = new RegExp('/' + area + '/' + 'i')
+    // str.search(new RegExp(search_str, "i"));
+
 
 
 
@@ -20,7 +24,11 @@ const OrgWorkingArea = ({ navigation, route }) => {
     const fundraisers_list = fundraisers.fundraisers_list?.values
 
     let filterd = fundraisers_list.filter((item) => {
-        if (item[1].includes(area.split(' ').join(''))) {
+        // if (item[1].includes(area)) {
+
+        console.log('zaher', item[1].search(new RegExp(area, "i")))
+
+        if (item[1].search(new RegExp(area, "i")) >= 0) {
             return item
         }
     })

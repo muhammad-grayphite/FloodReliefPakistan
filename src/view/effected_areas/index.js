@@ -1,14 +1,24 @@
 import React, { useEffect, useReducer } from "react";
 import { View, Text, FlatList, ActivityIndicator, Pressable } from "react-native";
+import { useSelector, useDispatch } from "react-redux";
+
 import AppHeader from "../../components/AppHeader";
 import Heading from "../../components/Heading";
+import { regions } from "../../constants/constantsValues";
 import styles from "./styles";
 
 function EffectedAreas({ navigation, route }) {
-    const areas = route.params.areas
-    let array_length = areas?.length
 
+    const fundraisers = useSelector((state) => ({ ...state.fundraisers }))
+    const loading = fundraisers.loading
+    const fundraisers_list = fundraisers.fundraisers_list?.values
+
+
+    const areas = route.params.areas
     let areasArray = [...areas.item]
+
+    const filterd_orgs = fundraisers_list?.filter(item => item[regions[areasArray[0]]] === 'TRUE')
+    console.log(' ,,,,', areasArray[0])
 
     if (areasArray?.length > 1) {
         areasArray.shift()
@@ -26,6 +36,17 @@ function EffectedAreas({ navigation, route }) {
                 style={styles.list_style} >
                 <View style={styles.circle}></View>
                 <Text style={styles.list_text}>{item?.item}</Text>
+            </Pressable >
+        )
+    }
+
+    const render_organization = (item, index) => {
+        return (
+            <Pressable
+                onPress={() => { navigation.navigate('Detail', { detail: item }) }}
+                style={styles.list_style} >
+                <View style={styles.circle}></View>
+                <Text style={styles.list_text}>{item?.item[0]}</Text>
             </Pressable >
         )
     }
@@ -58,8 +79,8 @@ function EffectedAreas({ navigation, route }) {
                     <Heading heading={'Organization'} />
                 </View>
                 <FlatList
-                    data={areasArray}
-                    renderItem={render_effected_areas}
+                    data={filterd_orgs}
+                    renderItem={render_organization}
                     showsVerticalScrollIndicator={false}
                     keyExtractor={item => 'a' + Math.random()}
                     initialNumToRender={20}

@@ -3,12 +3,7 @@ import { View, Text, FlatList, ActivityIndicator, Pressable, ScrollView } from "
 import AppHeader from "../../components/AppHeader";
 import SearchBar from "../../components/SearchBar";
 
-
-
-
-
 import styles from "./styles";
-
 import Heading from "../../components/Heading";
 
 const Detail = ({ navigation, route }) => {

@@ -24,7 +24,6 @@ const Home = ({ navigation }) => {
 
 
     useEffect(() => {
-        // loadData()
         dispatch(getFundraisers())
         dispatch(getEffectedAreas())
     }, [])
@@ -53,7 +52,6 @@ const Home = ({ navigation }) => {
     }
 
     const render_affectedareas_list = (item, index) => {
-        console.log('item flatlist', item)
         return (
             <Pressable
                 onPress={() => { navigation.navigate('EffectedAreas', { areas: item }) }}

@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
         color: black,
         fontSize: 16,
         marginLeft: 10,
+        flex: 1,
     },
 
     circle: {
@@ -26,6 +27,8 @@ const styles = StyleSheet.create({
         borderRadius: 10 / 2,
         backgroundColor: black,
         marginLeft: 20,
+        alignSelf: 'flex-start',
+        marginTop: 2,
     },
     flatList: {
         height: hp(35)

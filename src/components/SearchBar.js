@@ -1,14 +1,14 @@
 import React from 'react'
 import { Searchbar } from 'react-native-paper';
-const SearchBar = ({ onChangeSearch, searchQuery }) => {
+const SearchBar = ({ onChangeText, searchQuery }) => {
     return (
         <Searchbar
             placeholder="Type something..."
-            onChangeText={onChangeSearch}
+            onChangeText={onChangeText}
             value={searchQuery}
             placeholderTextColor={'white'}
             iconColor={'white'}
-            style={{ backgroundColor: 'red', borderColor: '#ffff', borderWidth: 1 }}
+            style={{ backgroundColor: 'red', borderColor: '#ffff', borderWidth: 1, color: 'white' }}
         />
     )
 }
