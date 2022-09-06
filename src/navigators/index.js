@@ -4,9 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Splash from '../view/splash';
-import Home from '../view/Home';
+import Home from '../view/home';
 import Detail from '../view/detail';
 import OrgWorkingArea from '../view/org_working_areas';
+import EffectedAreas from '../view/effected_areas';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,8 +30,7 @@ function HomeNavigator() {
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Detail" component={Detail} />
             <Stack.Screen name="OrganizationList" component={OrgWorkingArea} />
-
-
+            <Stack.Screen name="EffectedAreas" component={EffectedAreas} />
         </Stack.Navigator>
     );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from "react";
-import { View, Text, FlatList, ActivityIndicator, Pressable } from "react-native";
+import { View, Text, FlatList, ActivityIndicator, Pressable, ScrollView } from "react-native";
 import AppHeader from "../../components/AppHeader";
 import SearchBar from "../../components/SearchBar";
 
@@ -27,17 +27,15 @@ const Detail = ({ navigation, route }) => {
             />
 
 
-            <View style={styles.list_style}>
+            <ScrollView style={styles.list_style}>
                 <View style={styles.heading_color}>
                     <Heading heading={'Name'} />
                 </View>
                 <Text style={styles.list_text}>{item?.item[0]}</Text>
                 <View style={styles.heading_color}>
-                    <Heading
-                        heading={'Contact Person Detail'}
-                    />
+                    <Heading heading={'Contact Person Detail'} />
                 </View>
-                <Text style={styles.list_text}>{item?.item[9]}</Text>
+                <Text style={styles.list_text}>{item?.item[9]?.length > 0 ? item?.item[9] : 'Not mentioned'}</Text>
                 <View style={styles.heading_color}>
                     <Heading heading={'Province/Region'} />
                 </View>
@@ -79,19 +77,17 @@ const Detail = ({ navigation, route }) => {
 
 
                 <View style={styles.heading_color}>
-                    <Heading
-                        heading={'Item Needed'}
-                    />
+                    <Heading heading={'Items Needed'} />
                 </View>
-                <Text style={styles.list_text}>{item?.item[8]}</Text>
+                <Text style={styles.list_text}>{item?.item[8]?.length > 0 ? item?.item[8] : 'Not mentioned'}</Text>
                 <View style={styles.heading_color}>
                     <Heading
                         heading={'Bank Account Info'}
                     />
                 </View>
-                <Text style={styles.list_text}>{item?.item[10]}</Text>
+                <Text style={styles.list_text}>{item?.item[10]?.length > 0 ? item?.item[10] : 'Not mentioned'}</Text>
 
-            </View>
+            </ScrollView>
 
 
 

@@ -53,12 +53,15 @@ const Home = ({ navigation }) => {
     }
 
     const render_affectedareas_list = (item, index) => {
+        console.log('item flatlist', item)
         return (
-            <View style={styles.list_style} >
+            <Pressable
+                onPress={() => { navigation.navigate('EffectedAreas', { areas: item }) }}
+                style={styles.list_style} >
                 <Text style={styles.list_text}>
                     {item?.item[0]}
                 </Text>
-            </View >
+            </Pressable >
         )
     }
 
@@ -97,7 +100,7 @@ const Home = ({ navigation }) => {
                     </View>
 
                     <View style={styles.heading_color}>
-                        <Heading heading={'Areas'} />
+                        <Heading heading={'Regions'} />
                     </View>
 
                     <View style={styles.flatList}>

@@ -1,14 +1,17 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, FlatList, Pressable } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
+import AppHeader from "../../components/AppHeader";
+import Heading from "../../components/Heading";
 import { getFundraisers } from "../../redux/reducers/fundraisers_reducer";
 
 
 import styles from "./styles";
 
 const OrgWorkingArea = ({ navigation, route }) => {
-    let area = route?.params?.area.replace(/^\uFEFF/, '')
-    console.log('area', area.length)
+
+    let area = route?.params?.area
+
 
 
     const dispatch = useDispatch()
@@ -17,29 +20,43 @@ const OrgWorkingArea = ({ navigation, route }) => {
     const fundraisers_list = fundraisers.fundraisers_list?.values
 
     let filterd = fundraisers_list.filter((item) => {
-        console.log()
-
-        // if (item[1].includes('Taunsa')) {
-        //     console.log(typeof item[1])
-        //     return item
-        // }
         if (item[1].includes(area.split(' ').join(''))) {
-            console.log(area == 'Taunsa')
-            console.log(typeof item[1])
-
             return item
         }
     })
 
-    console.log('filterd', filterd)
 
+    const render_org_list = (item, index) => {
+        return (
+            <Pressable
+                onPress={() => { navigation.navigate('Detail', { detail: item }) }}
+                style={styles.list_style} >
+                <View style={styles.circle}></View>
+                <Text style={styles.list_text}>{item?.item[0]}</Text>
+            </Pressable >
+        )
+    }
 
 
     return (
         <View style={styles.wraper}>
-            <Text>
-                {area}
-            </Text>
+            <AppHeader
+                title={'Organizations'}
+                leftIconName={'arrowleft'}
+                leftIconType={'antdesign'}
+                leftPress={() => navigation.goBack()}
+            />
+            <View style={styles.heading_color}>
+                <Heading heading={'List of organizations working'} />
+            </View>
+            <FlatList
+                data={filterd}
+                renderItem={render_org_list}
+                showsVerticalScrollIndicator={false}
+                keyExtractor={item => 'a' + Math.random()}
+                initialNumToRender={20}
+                maxToRenderPerBatch={20}
+            />
 
         </View>
     )
