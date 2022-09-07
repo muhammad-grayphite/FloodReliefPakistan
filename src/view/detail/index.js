@@ -1,12 +1,32 @@
 import React, { useEffect, useReducer } from "react";
 import { View, Text, FlatList, ActivityIndicator, Pressable, ScrollView } from "react-native";
+import Clipboard from '@react-native-community/clipboard';
+import Toast from 'react-native-simple-toast';
+
 import AppHeader from "../../components/AppHeader";
 import SearchBar from "../../components/SearchBar";
+
 
 import styles from "./styles";
 import Heading from "../../components/Heading";
 
 const Detail = ({ navigation, route }) => {
+
+    const [state, updateState] = useReducer(
+        (state, newState) => ({ ...state, ...newState }),
+        {
+            copiedText: '',
+
+        }
+    )
+
+    const { copiedText } = state
+
+
+    const copyToClipboard = (text) => {
+        Clipboard.setString(text);
+        Toast.show('copy to clipboard', Toast.LONG, Toast.BOTTOM);
+    };
 
     const item = route?.params?.detail
     let areas = item?.item[2].split('/')
@@ -80,7 +100,14 @@ const Detail = ({ navigation, route }) => {
                         heading={'Bank Account Info'}
                     />
                 </View>
-                <Text style={styles.list_text}>{item?.item[10]?.length > 0 ? item?.item[10] : 'Not mentioned'}</Text>
+                <Pressable
+                    onPress={() => copyToClipboard(
+                        item?.item[10]?.length > 0 ?
+                            item?.item[10] : ''
+                    )}
+                >
+                    <Text style={styles.list_text}>{item?.item[10]?.length > 0 ? item?.item[10] : 'Not mentioned'}</Text>
+                </Pressable>
 
             </ScrollView>
 
