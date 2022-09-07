@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     },
     centerText: {
         textAlign: 'center',
-        color: darkBlue,
+        color: black,
         // fontFamily: semi_bold,
         fontSize: mediumSize,
     },

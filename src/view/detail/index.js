@@ -25,7 +25,7 @@ const Detail = ({ navigation, route }) => {
 
     const copyToClipboard = (text) => {
         Clipboard.setString(text);
-        Toast.show('copy to clipboard', Toast.LONG, Toast.BOTTOM);
+        Toast.show('copy to clipboard', Toast.LONG)
     };
 
     const item = route?.params?.detail
@@ -50,7 +50,21 @@ const Detail = ({ navigation, route }) => {
                 <View style={styles.heading_color}>
                     <Heading heading={'Contact Person Detail'} />
                 </View>
-                <Text style={styles.list_text}>{item?.item[9]?.length > 0 ? item?.item[9] : 'Not mentioned'}</Text>
+
+
+                <View>
+                    <Text style={styles.list_text}>{item?.item[9]?.length > 0 ? item?.item[9] : 'Not mentioned'}</Text>
+                    <Pressable
+                        onPress={() => copyToClipboard(
+                            item?.item[9]?.length > 0 ?
+                                item?.item[9] : ''
+                        )}
+                        style={[styles.copyBtn, { marginBottom: 0, marginTop: 10 }]}>
+                        <Text style={styles.copy_text}>copy</Text>
+                    </Pressable>
+                </View>
+
+
                 <View style={styles.heading_color}>
                     <Heading heading={'Province/Region'} />
                 </View>
@@ -108,6 +122,16 @@ const Detail = ({ navigation, route }) => {
                 >
                     <Text style={styles.list_text}>{item?.item[10]?.length > 0 ? item?.item[10] : 'Not mentioned'}</Text>
                 </Pressable>
+
+                <Pressable
+                    onPress={() => copyToClipboard(
+                        item?.item[10]?.length > 0 ?
+                            item?.item[10] : ''
+                    )}
+                    style={styles.copyBtn}>
+                    <Text style={styles.copy_text}>copy</Text>
+                </Pressable>
+
 
             </ScrollView>
 

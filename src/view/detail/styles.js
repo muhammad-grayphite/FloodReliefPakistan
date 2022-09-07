@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { black, offwhite } from "../../constants/colors";
+import { black, offwhite, red } from "../../constants/colors";
 const styles = StyleSheet.create({
     wraper: {
         flex: 0.94,
@@ -32,7 +32,22 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
 
+    },
+    copyBtn: {
+        alignSelf: 'flex-end',
+        backgroundColor: red,
+        paddingHorizontal: 15,
+        paddingVertical: 5,
+        borderRadius: 10,
+        marginRight: 20,
+        bottom: 10,
+    },
+    copy_text: {
+        color: 'white',
+        fontSize: 15,
+        fontWeight: "normal",
     }
+
 
 })
 export default styles
