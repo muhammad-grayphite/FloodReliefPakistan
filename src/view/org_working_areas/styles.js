@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 import { black, offwhite } from "../../constants/colors";
 const styles = StyleSheet.create({
     wraper: {
-        flex: 0.94
+        flex: 1
     },
     list_style: {
         // paddingHorizontal: 15,
@@ -21,9 +21,9 @@ const styles = StyleSheet.create({
     },
 
     circle: {
-        width: 10,
-        height: 10,
-        borderRadius: 10 / 2,
+        width: 7,
+        height: 7,
+        borderRadius: 7 / 2,
         backgroundColor: black,
         marginLeft: 20,
     },

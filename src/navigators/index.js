@@ -7,7 +7,7 @@ import Splash from '../view/splash';
 import Home from '../view/home';
 import Detail from '../view/detail';
 import OrgWorkingArea from '../view/org_working_areas';
-import EffectedAreas from '../view/effected_areas';
+import EffectedAreas from '../view/affected_areas';
 
 const Stack = createNativeStackNavigator();
 

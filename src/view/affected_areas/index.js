@@ -68,7 +68,7 @@ function EffectedAreas({ navigation, route }) {
                 <FlatList
                     data={areasArray}
                     renderItem={render_effected_areas}
-                    showsVerticalScrollIndicator={false}
+                    showsVerticalScrollIndicator={true}
                     keyExtractor={item => 'a' + Math.random()}
                     initialNumToRender={20}
                     maxToRenderPerBatch={20}
@@ -82,7 +82,7 @@ function EffectedAreas({ navigation, route }) {
                 <FlatList
                     data={filterd_orgs}
                     renderItem={render_organization}
-                    showsVerticalScrollIndicator={false}
+                    showsVerticalScrollIndicator={true}
                     keyExtractor={item => 'a' + Math.random()}
                     initialNumToRender={20}
                     maxToRenderPerBatch={20}

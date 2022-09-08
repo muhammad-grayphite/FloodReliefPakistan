@@ -9,11 +9,12 @@ import { getFundraisers } from "../../redux/reducers/fundraisers_reducer";
 import { getEffectedAreas } from "../../redux/reducers/effected_areas_reducer";
 
 import Heading from "../../components/Heading";
-import { black } from "../../constants/colors";
+import { black, red } from "../../constants/colors";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
 import Footer from "../../components/AppFooter";
 import { statusBar } from '../../constants/sizes'
 import { getStatusBarHeight, isIphoneX } from "react-native-iphone-x-helper";
+import { Icon } from "@rneui/base";
 
 const Home = ({ navigation }) => {
     const dispatch = useDispatch()
@@ -65,9 +66,18 @@ const Home = ({ navigation }) => {
 
             <Pressable onPress={() => navigation.navigate('Detail', { detail: item })}>
                 <View style={styles.list_style} >
-                    <Text style={styles.list_text}>
-                        {item?.item[0]}
-                    </Text>
+
+                    <View style={styles.row}>
+                        <View style={styles.circle}></View>
+                        <Text style={styles.list_text}>
+                            {item?.item[0]}
+                        </Text>
+                    </View>
+                    <Icon
+                        name="keyboard-arrow-right"
+                        type="material"
+                        iconStyle={{ fontSize: 20, color: red }}
+                    />
                 </View >
             </Pressable>
 
@@ -89,9 +99,17 @@ const Home = ({ navigation }) => {
             <Pressable
                 onPress={() => { navigation.navigate('EffectedAreas', { areas: item }) }}
                 style={styles.list_style} >
-                <Text style={styles.list_text}>
-                    {item?.item[0]}
-                </Text>
+                <View style={styles.row}>
+                    <View style={styles.circle}></View>
+                    <Text style={styles.list_text}>
+                        {item?.item[0]}
+                    </Text>
+                </View>
+                <Icon
+                    name="keyboard-arrow-right"
+                    type="material"
+                    iconStyle={{ fontSize: 20, color: red }}
+                />
             </Pressable >
         )
     }
@@ -126,7 +144,7 @@ const Home = ({ navigation }) => {
 
                                 filteredData?.length > 0 ? filteredData : searchValue?.length > 0 ? filteredData : fundraisers_list}
                             renderItem={redner_fundraisers_list}
-                            showsVerticalScrollIndicator={false}
+                            showsVerticalScrollIndicator={true}
                             keyExtractor={item => 'a' + Math.random()}
                             initialNumToRender={20}
                             maxToRenderPerBatch={20}
@@ -142,7 +160,7 @@ const Home = ({ navigation }) => {
                         <FlatList
                             data={effectedArea_list}
                             renderItem={render_affectedareas_list}
-                            showsVerticalScrollIndicator={false}
+                            showsVerticalScrollIndicator={true}
                             keyExtractor={item => 'a' + Math.random()}
                             initialNumToRender={20}
                             maxToRenderPerBatch={20}

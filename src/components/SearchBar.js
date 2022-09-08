@@ -9,7 +9,7 @@ const SearchBar = ({ onChangeText, searchQuery }) => {
             placeholderTextColor={'white'}
             iconColor={'white'}
             inputStyle={{ color: 'white' }}
-            style={{ backgroundColor: 'red', borderColor: '#ffff', borderWidth: 1, color: 'white' }}
+            style={{ backgroundColor: 'red', borderColor: '#ffff', marginTop: 10, marginHorizontal: 10, }}
         />
     )
 }
