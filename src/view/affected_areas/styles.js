@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
         marginTop: 5,
     },
     flatList: {
-        // height: hp(40)
         flex: 0.5
     },
     heading_color: {

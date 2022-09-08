@@ -6,8 +6,6 @@ import { black, darkBlue, ferozi, red, white } from '../constants/colors'
 import { headerHeigh, mediumSize, small } from '../constants/sizes';
 
 
-// import { regular, semi_bold } from '../Constants/fontFamily';
-
 
 const AppHeader = (props) => {
     const {
@@ -81,7 +79,6 @@ const styles = StyleSheet.create({
     centerText: {
         textAlign: 'center',
         color: black,
-        // fontFamily: semi_bold,
         fontSize: mediumSize,
     },
     right: {
@@ -109,7 +106,6 @@ const styles = StyleSheet.create({
     },
     cname: {
         marginLeft: 5,
-        // fontFamily: regular,
         fontSize: small,
         color: black
 

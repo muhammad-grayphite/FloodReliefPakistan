@@ -139,9 +139,7 @@ const Home = ({ navigation }) => {
                 <>
                     <View style={styles.flatList}>
                         <FlatList
-                            // data={fundraisers_list_copy}
                             data={
-
                                 filteredData?.length > 0 ? filteredData : searchValue?.length > 0 ? filteredData : fundraisers_list}
                             renderItem={redner_fundraisers_list}
                             showsVerticalScrollIndicator={true}

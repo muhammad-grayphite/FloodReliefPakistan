@@ -6,14 +6,8 @@ export const ferozi = '#07A79F'
 export const lightBlack = '#1A2E35';
 export const pink = 'rgb(252,227,235)'
 
-
-// export const darkGrey ='#5A5A5A';
-// export const darkGrey = '#B8B8CD'
-// export const lightGrey = '#CCCCCC';
 export const grey = '#ADADAD';
 export const dark_offwhite = '#F2F2F2'
-// export const white = '#fff'
 export const red = '#ED1B2A'
 export const black = '#000'
 export const offwhite = '#F7F7F7'
-// export const darkSky = '#07B1FC'

@@ -17,7 +17,6 @@ const App = () => {
       <AppNavigator />
 
       <View style={{ position: 'absolute', bottom: 0 }}>
-        {/* <Footer /> */}
       </View>
     </View>
   );

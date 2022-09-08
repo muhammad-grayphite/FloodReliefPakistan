@@ -16,13 +16,12 @@ function EffectedAreas({ navigation, route }) {
 
 
     const areas = route.params.areas
-    let areasArray = [...areas.item]
+    let areas_list = [...areas.item]
 
-    const filterd_orgs = fundraisers_list?.filter(item => item[regions[areasArray[0]]] === 'TRUE')
-    console.log(' ,,,,', areasArray[0])
+    const filterd_orgs = fundraisers_list?.filter(item => item[regions[areas_list[0]]] === 'TRUE')
 
-    if (areasArray?.length > 1) {
-        areasArray.shift()
+    if (areas_list?.length > 1) {
+        areas_list.shift()
 
     }
 
@@ -66,7 +65,7 @@ function EffectedAreas({ navigation, route }) {
                     <Heading heading={'Areas'} />
                 </View>
                 <FlatList
-                    data={areasArray}
+                    data={areas_list}
                     renderItem={render_effected_areas}
                     showsVerticalScrollIndicator={true}
                     keyExtractor={item => 'a' + Math.random()}

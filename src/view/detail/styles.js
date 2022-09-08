@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
         backgroundColor: offwhite,
     },
     list_style: {
-        // paddingHorizontal: 15,
         marginTop: 10,
     },
     list_text: {

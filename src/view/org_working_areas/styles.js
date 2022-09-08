@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
         flex: 1
     },
     list_style: {
-        // paddingHorizontal: 15,
         flexDirection: 'row',
         alignItems: 'center',
         paddingVertical: 10,
@@ -16,8 +15,6 @@ const styles = StyleSheet.create({
         color: black,
         fontSize: 16,
         marginLeft: 10,
-
-        // paddingBottom: 10,
     },
 
     circle: {

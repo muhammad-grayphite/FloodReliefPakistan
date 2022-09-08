@@ -5,18 +5,11 @@ import AppHeader from "../../components/AppHeader";
 import Heading from "../../components/Heading";
 import { black } from "../../constants/colors";
 import { getFundraisers } from "../../redux/reducers/fundraisers_reducer";
-
-
 import styles from "./styles";
 
 const OrgWorkingArea = ({ navigation, route }) => {
 
     let area = route?.params?.area.split(' ').join('')
-
-    // str.search(new RegExp(search_str, "i"));
-
-
-
 
     const dispatch = useDispatch()
     const fundraisers = useSelector((state) => ({ ...state.fundraisers }))
@@ -24,7 +17,6 @@ const OrgWorkingArea = ({ navigation, route }) => {
     const fundraisers_list = fundraisers.fundraisers_list?.values
 
     let filterd = fundraisers_list.filter((item) => {
-        // if (item[1].includes(area)) {
         if (item[1].search(new RegExp(area, "i")) >= 0) {
             return item
         }

@@ -25,11 +25,6 @@ const Splash = ({ navigation }) => {
                 <Text style={styles.text_style}>Flood</Text>
                 <Text style={styles.text_style}>Relief</Text>
                 <Text style={styles.text_style}>Pakistan</Text>
-                {/* <Image
-                    source={splash_logo}
-                    resizeMode={'contain'}
-                    style={{ width: '70%', height: '70%' }}
-                /> */}
             </View>
             <Footer />
 

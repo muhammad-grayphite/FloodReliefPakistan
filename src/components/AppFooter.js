@@ -14,7 +14,6 @@ const Footer = (props) => {
                 resizeMode={'contain'}
                 style={{ width: '100%', height: 25, }}
             />
-            {/* <Text style={styles.text_style}>Powered by Grayphite</Text> */}
         </View>
     )
 }
@@ -22,14 +21,12 @@ export default Footer
 
 const styles = StyleSheet.create({
     wraper: {
-        // flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
         width: widthPercentageToDP(100),
         paddingVertical: 10,
         paddingHorizontal: 20,
         backgroundColor: red
-        // height: heightPercentageToDP(30)
     },
     text_style: {
         color: grey,
