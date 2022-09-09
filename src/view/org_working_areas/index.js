@@ -4,16 +4,13 @@ import { useSelector, useDispatch } from "react-redux";
 import AppHeader from "../../components/AppHeader";
 import Heading from "../../components/Heading";
 import { black } from "../../constants/colors";
-import { getFundraisers } from "../../redux/reducers/fundraisers_reducer";
 import styles from "./styles";
 
 const OrgWorkingArea = ({ navigation, route }) => {
 
     let area = route?.params?.area.split(' ').join('')
 
-    const dispatch = useDispatch()
     const fundraisers = useSelector((state) => ({ ...state.fundraisers }))
-    const loading = fundraisers.loading
     const fundraisers_list = fundraisers.fundraisers_list?.values
 
     let filterd = fundraisers_list.filter((item) => {
