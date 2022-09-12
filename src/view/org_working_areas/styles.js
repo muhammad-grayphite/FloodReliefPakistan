@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { black, offwhite } from "../../constants/colors";
+
 const styles = StyleSheet.create({
     wraper: {
         flex: 1

@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet } from 'react-native'
 import { red } from "../../constants/colors";
 
+
 const styles = StyleSheet.create({
     wraper: {
         flex: 1,

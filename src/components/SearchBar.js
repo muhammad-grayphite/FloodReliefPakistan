@@ -1,5 +1,7 @@
 import React from 'react'
 import { Searchbar } from 'react-native-paper';
+
+
 const SearchBar = ({ onChangeText, searchQuery }) => {
     return (
         <Searchbar

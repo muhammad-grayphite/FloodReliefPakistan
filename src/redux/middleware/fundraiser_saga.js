@@ -24,6 +24,7 @@ function* onLoadFundRaisersList() {
 }
 
 
+
 export const fundraisers_Saga = [fork(onLoadFundRaisersList)]
 
 

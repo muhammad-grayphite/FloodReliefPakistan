@@ -4,6 +4,7 @@ import { StackActions } from '@react-navigation/native';
 import styles from './styles'
 import Footer from '../../components/AppFooter';
 
+
 const Splash = ({ navigation }) => {
 
     useEffect(() => {

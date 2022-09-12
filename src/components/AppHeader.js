@@ -6,7 +6,6 @@ import { black, ferozi, red, white } from '../constants/colors'
 import { headerHeigh, mediumSize, small } from '../constants/sizes';
 
 
-
 const AppHeader = (props) => {
     const {
         title,

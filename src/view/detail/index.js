@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer } from "react";
-import { View, Text, FlatList, ActivityIndicator, Pressable, ScrollView } from "react-native";
+import { View, Text, FlatList, Pressable, ScrollView } from "react-native";
 import Clipboard from '@react-native-community/clipboard';
 import Toast from 'react-native-simple-toast';
 

@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { View, Text, FlatList, Pressable } from "react-native";
 import { useSelector } from "react-redux";
-
 import AppHeader from "../../components/AppHeader";
 import Heading from "../../components/Heading";
 import { regions } from "../../constants/constantsValues";

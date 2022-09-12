@@ -1,8 +1,8 @@
 import React from 'react';
 import { Platform, View, StatusBar } from 'react-native';
-import Footer from './src/components/AppFooter';
 import { red } from './src/constants/colors';
 import AppNavigator from './src/navigators';
+
 
 const App = () => {
 

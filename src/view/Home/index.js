@@ -1,7 +1,6 @@
 import React, { useEffect, useReducer } from "react";
 import { View, Text, FlatList, ActivityIndicator, Pressable, Platform } from "react-native";
 import SearchBar from "../../components/SearchBar";
-
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./styles";
 import { getFundraisers } from "../../redux/reducers/fundraisers_reducer";

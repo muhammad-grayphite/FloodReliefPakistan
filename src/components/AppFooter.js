@@ -4,6 +4,7 @@ import { widthPercentageToDP } from "react-native-responsive-screen";
 import { grey, red } from "../constants/colors";
 import { company_logo } from "../constants/images";
 
+
 const Footer = (props) => {
     return (
 

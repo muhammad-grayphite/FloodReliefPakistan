@@ -6,6 +6,7 @@ import Heading from "../../components/Heading";
 import { black } from "../../constants/colors";
 import styles from "./styles";
 
+
 const OrgWorkingArea = ({ navigation, route }) => {
 
     let area = route?.params?.area.split(' ').join('')
