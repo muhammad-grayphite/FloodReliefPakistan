@@ -2,9 +2,8 @@ import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Icon } from "@rneui/themed";
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
-import { black, darkBlue, ferozi, red, white } from '../constants/colors'
+import { black, ferozi, red, white } from '../constants/colors'
 import { headerHeigh, mediumSize, small } from '../constants/sizes';
-
 
 
 const AppHeader = (props) => {

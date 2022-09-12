@@ -1,8 +1,6 @@
 import React, { useEffect, useReducer } from "react";
-import { View, Text, FlatList, ActivityIndicator, Pressable, ScrollView, Platform } from "react-native";
-import AppHeader from "../../components/AppHeader";
+import { View, Text, FlatList, ActivityIndicator, Pressable, Platform } from "react-native";
 import SearchBar from "../../components/SearchBar";
-
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./styles";
 import { getFundraisers } from "../../redux/reducers/fundraisers_reducer";
@@ -11,8 +9,6 @@ import { getEffectedAreas } from "../../redux/reducers/effected_areas_reducer";
 import Heading from "../../components/Heading";
 import { black, red } from "../../constants/colors";
 import { heightPercentageToDP as hp } from "react-native-responsive-screen";
-import Footer from "../../components/AppFooter";
-import { statusBar } from '../../constants/sizes'
 import { getStatusBarHeight, isIphoneX } from "react-native-iphone-x-helper";
 import { Icon } from "@rneui/base";
 
@@ -22,7 +18,6 @@ const Home = ({ navigation }) => {
     const effected_areas = useSelector((state) => ({ ...state.effected_areas }))
     const loading = fundraisers.loading
     const fundraisers_list = fundraisers.fundraisers_list?.values
-    let fundraisers_list_master = fundraisers.fundraisers_list?.values
     const effectedArea_list = effected_areas?.effected_areas_list?.values
 
 

@@ -12,7 +12,6 @@ export const large = RFValue(18)
 export const ex_large = RFValue(25)
 
 
-
 export const statusBar = Platform.OS == 'android' ?
     getStatusBarHeight() : isIphoneX() ?
         getStatusBarHeight() + 30 : getStatusBarHeight() + 15

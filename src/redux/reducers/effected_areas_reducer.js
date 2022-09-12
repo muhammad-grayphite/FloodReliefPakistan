@@ -22,3 +22,4 @@ const slice = createSlice({
 export const { getEffectedAreas, setEffectedAreas } = slice.actions;
 
 export default slice.reducer;
+

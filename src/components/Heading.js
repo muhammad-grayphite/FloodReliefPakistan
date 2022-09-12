@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { red } from "../constants/colors";
 
+
 const Heading = (props) => {
     const { heading } = props
     return (

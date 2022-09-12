@@ -1,8 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from 'react-native'
-import { heightPercentageToDP, widthPercentageToDP } from "react-native-responsive-screen";
-import { grey, offwhite, red } from "../constants/colors";
+import { widthPercentageToDP } from "react-native-responsive-screen";
+import { grey, red } from "../constants/colors";
 import { company_logo } from "../constants/images";
+
 
 const Footer = (props) => {
     return (

@@ -21,6 +21,7 @@ const slice = createSlice({
 
 export const { getFundraisers, setFundraisers } = slice.actions;
 
+
 export default slice.reducer;
 
 

@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
-import { View, Text, Image, StatusBar, Platform } from 'react-native'
+import { View, Text, } from 'react-native'
 import { StackActions } from '@react-navigation/native';
-import { splash_logo } from '../../constants/images'
 import styles from './styles'
 import Footer from '../../components/AppFooter';
-import { red } from '../../constants/colors';
+
 
 const Splash = ({ navigation }) => {
 

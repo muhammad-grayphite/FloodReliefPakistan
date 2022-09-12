@@ -5,6 +5,7 @@ import { effectedAreas_Saga } from './effected_areas_saga'
 
 
 
+
 export default function* rootSaga() {
     yield all([...fundraisers_Saga, ...effectedAreas_Saga]);
 }

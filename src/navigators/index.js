@@ -9,6 +9,7 @@ import Detail from '../view/detail';
 import OrgWorkingArea from '../view/org_working_areas';
 import EffectedAreas from '../view/affected_areas';
 
+
 const Stack = createNativeStackNavigator();
 
 

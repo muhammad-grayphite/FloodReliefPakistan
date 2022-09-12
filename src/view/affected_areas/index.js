@@ -1,8 +1,6 @@
-import React, { useEffect, useReducer } from "react";
-import { View, Text, FlatList, ActivityIndicator, Pressable } from "react-native";
-import { useSelector, useDispatch } from "react-redux";
-import Footer from "../../components/AppFooter";
-
+import React, { useEffect } from "react";
+import { View, Text, FlatList, Pressable } from "react-native";
+import { useSelector } from "react-redux";
 import AppHeader from "../../components/AppHeader";
 import Heading from "../../components/Heading";
 import { regions } from "../../constants/constantsValues";
